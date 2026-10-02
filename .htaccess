@@ -1,0 +1,14 @@
+AddType text/css .css
+AddType application/javascript .js
+AddType image/jpeg .jpeg .jpg
+
+<IfModule mod_mime.c>
+  AddType text/css .css
+  AddType application/javascript .js
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
